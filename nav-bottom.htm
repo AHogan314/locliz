@@ -1,0 +1,36 @@
+<!-- bottom navigation bar -->
+		<nav class="navbar navbar-inverse navbar-fixed-bottom center">
+			
+			<!-- navigation links -->
+			<div class="navbar-inner">
+		        <ul class="nav navbar-nav">
+		        	<!-- home -->
+		            <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
+		            <!-- messages -->
+		            <li><a href="messages.php"><span class="glyphicon glyphicon-comment"></a></li>
+		            <!-- new post -->
+		            <li><a href="new-post.php"><span class="glyphicon glyphicon-plus"></a></li>
+		            <!-- notifications -->
+		            <li><a href="notifications.php"><span class="glyphicon glyphicon-bell"></a></li>
+		            <!-- refresh -->
+		            <li><a href="#" onclick="pageRefresh()"><span class="glyphicon glyphicon-repeat"></a></li>
+
+		            <!-- more -->
+		        	<li class="dropdown">
+        				<a href="#" class ="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-option-horizontal"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="search.php"><span class="glyphicon glyphicon-search"> Search</a></li>
+							<li><a href="settings.php"><span class="glyphicon glyphicon-cog"> Settings</a></li>
+							<li><a href="profile.php"><span class="glyphicon glyphicon-user"> Profile</a></li>
+							<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"> Logout</a></li>
+						</ul>
+					</li>
+		        </ul>
+		    </div>
+		</nav>
+
+		<script>
+			function pageRefresh() {
+			    location.reload();
+			}
+</script>
