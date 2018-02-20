@@ -1,6 +1,5 @@
 <?php
-
-	//near identical to signup.php
+	//handles submitting a new thread
 
 	session_start();
 

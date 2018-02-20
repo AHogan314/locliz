@@ -1,4 +1,6 @@
 <?php
+	// database connection
+
 	// database credentials
 	$dbHost = "localhost";
 	$dbUsername = "root";

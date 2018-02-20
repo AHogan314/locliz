@@ -1,4 +1,6 @@
 <?php
+	//handles sign up form submissions/creates new user account
+
 	// include database credentials/connection
 	include('./dbh.php');
 
