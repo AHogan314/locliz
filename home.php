@@ -15,7 +15,7 @@
 		<div class="container">
 
 			<!-- top navigation bar -->
-			<?php include('./nav-top.htm'); ?>	
+			<?php include('./nav-top.php'); ?>	
 
 			<div id="main" style="margin-top: 100px; margin-bottom: 100px">
 				<h1 style="background-color: #6495ed;color: white;"><?php echo $_SESSION['name']; ?>-online</h1>
