@@ -1,5 +1,5 @@
 <?php
-	//handles replies on viewthread page
+	// handles replies on viewthread page
 
 	session_start();
 

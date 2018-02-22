@@ -20,38 +20,38 @@
 			<?php include('./nav-top.htm'); ?>	
 
 			<?php
-				//select all rows FROM "posts" table and sort newest to oldest
+				// select all rows FROM "posts" table and sort newest to oldest
 				$sql = "SELECT * FROM posts WHERE id = $threadId";
 				$result = $conn->query($sql);
 
-				//this should always be exactly one row, probably could rewrite this
+				// this should always be exactly one row, probably could rewrite this
 				if($result->num_rows > 0){
 					// output data of each row
 					while($row = $result->fetch_assoc()){
-						//echo post
+						// echo post
 						echo "" . $row["name"] . " " . ":: " . $row["msg"] . " -- " . $row["date"] . "<br><br>";
 					}
 				}
 				else {
-					//fallback if db empty
+					// fallback if db empty
 					echo "thread not found!";
 				}
 
-				//reply handler
-				//select all rows FROM "posts" table and sort newest to oldest
+				// reply handler
+				// select all rows FROM "posts" table and sort newest to oldest
 				$sql = "SELECT * FROM replies WHERE thread_id = $threadId";
 				$result = $conn->query($sql);
 
-				//this should always be exactly one row, probably could rewrite this
+				// this should always be exactly one row, probably could rewrite this
 				if($result->num_rows > 0){
 					// output data of each row
 					while($row = $result->fetch_assoc()){
-						//echo post
+						// echo post
 						echo "" . $row["name"] . " " . ":: " . $row["msg"] . " -- " . $row["date"] . "<br><br>";
 					}
 				}
 				else {
-					//fallback if no replies
+					// fallback if no replies
 					echo "<br>no replies";
 				}
 				$conn->close();
@@ -69,7 +69,7 @@
 			<?php include('./nav-bottom.htm'); ?>		
 		</div>
 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http:// ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 
 	</body>

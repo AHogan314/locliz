@@ -1,7 +1,7 @@
 <?php
-	//login
+	// login
 	
-	//session var start
+	// session var start
 	session_start();
 
 	// include database credentials/connection
@@ -18,7 +18,7 @@
 	// run query
 	$result = $conn->query($sql);
 
-	//error handling
+	// error handling
 	if(!$row=$result->fetch_assoc()){
 		header("Location:error.php");
 	}
