@@ -1,17 +1,20 @@
 <?php
 	// post filters
-	$sortOrder;
-	$radius;
+	$sortOrder = "";
+	$radius = "";
 	$radiusName = "Auto";
-	if(!is_null($_GET["sort"])){
-		$sortOrder = "&sort=" . $_GET["sort"];
+	if(isset($_GET["radius"])){
+		if(!is_null($_GET["sort"])){
+			$sortOrder = "&sort=" . $_GET["sort"];
+		}
 	}
-	if(!is_null($_GET["radius"])){
-		$radius = "&radius=" . $_GET["radius"];
-		$radiusName = $_GET["radius"];
-		// fix spacing of radius name
-		$radiusName = str_replace("Mile", " Mile", $radiusName);
-		$radiusName = str_replace("Feet", " Feet", $radiusName);
+	if(isset($_GET["radius"])){
+		if(!is_null($_GET["radius"])){
+			$radius = "&radius=" . $_GET["radius"];
+			$radiusName = $_GET["radius"];
+			// fix spacing of radius name
+			$radiusName = str_replace("_", " ", $radiusName);
+		}
 	}
 
 ?>
@@ -34,19 +37,19 @@
 	<!-- navigation links -->
 	<div class="navbar-inner">
         <ul class="nav navbar-nav">
-            <li><a href="home.php?sort=newest<?php echo $radius;?>">Newest</a></li>
-            <li><a href="home.php?sort=mostReplies<?php echo $radius;?>">Most Replies</a></li>
+            <li><a href="index.php?sort=newest<?php echo $radius;?>">Newest</a></li>
+            <li><a href="index.php?sort=mostReplies<?php echo $radius;?>">Most Replies</a></li>
             <li><a href="map.php">Map</a></li>
         	<li class="dropdown">
 				<a href="#" class ="dropdown-toggle" data-toggle="dropdown">Radius: <?php echo $radiusName;?> <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="home.php?radius=Auto<?php echo $sortOrder;?>">Auto</a></li>
-					<li><a href="home.php?radius=Worldwide<?php echo $sortOrder;?>">Worldwide</a></li>
-					<li><a href="home.php?radius=1000Miles<?php echo $sortOrder;?>">1000 Miles</a></li>
-					<li><a href="home.php?radius=100Miles<?php echo $sortOrder;?>">100 Miles</a></li>
-					<li><a href="home.php?radius=50Miles<?php echo $sortOrder;?>">50 Miles</a></li>
-					<li><a href="home.php?radius=1Mile<?php echo $sortOrder;?>">1 Mile</a></li>
-					<li><a href="home.php?radius=1000Feet<?php echo $sortOrder;?>">1000 Feet</a></li>
+					<li><a href="index.php?radius=Auto<?php echo $sortOrder;?>">Auto</a></li>
+					<li><a href="index.php?radius=Worldwide<?php echo $sortOrder;?>">Worldwide</a></li>
+					<li><a href="index.php?radius=1000_Miles<?php echo $sortOrder;?>">1000 Miles</a></li>
+					<li><a href="index.php?radius=100_Miles<?php echo $sortOrder;?>">100 Miles</a></li>
+					<li><a href="index.php?radius=50_Miles<?php echo $sortOrder;?>">50 Miles</a></li>
+					<li><a href="index.php?radius=1_Mile<?php echo $sortOrder;?>">1 Mile</a></li>
+					<li><a href="index.php?radius=1000_Feet<?php echo $sortOrder;?>">1000 Feet</a></li>
 				</ul>
 			</li>
         </ul>

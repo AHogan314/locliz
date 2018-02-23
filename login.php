@@ -26,7 +26,7 @@
 
 		$_SESSION['name']=$_POST['uname'];
 
-		header("Location:home.php");
+		header("Location:index.php");
 	}
 	
 ?>

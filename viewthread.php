@@ -2,6 +2,8 @@
 	session_start();
 	include('./dbh.php');
 
+	include('./login-check.php');
+
 	$threadId = $_GET['id'];
 
 ?>
@@ -16,8 +18,7 @@
 	<body>
 		<div class="container" style="margin-top: 200px">
 
-			<!-- top navigation bar -->
-			<?php include('./nav-top.htm'); ?>	
+
 
 			<?php
 				// select all rows FROM "posts" table and sort newest to oldest
@@ -66,7 +67,7 @@
 			<br>
 
 			<!-- bottom navigation bar -->
-			<?php include('./nav-bottom.htm'); ?>		
+			<?php include('./nav-bottom.php'); ?>		
 		</div>
 		
 		<script src="http:// ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
