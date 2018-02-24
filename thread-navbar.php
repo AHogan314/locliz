@@ -1,4 +1,5 @@
 <!-- thread controls -->
+<nav class="navbar center">
 <div class="navbar-inner">
     <ul class="nav navbar-nav">
     	<!-- thumbs up -->
@@ -19,4 +20,5 @@
 			</ul>
 		</li>
     </ul>
-</div><br><br>'
+</div>
+</span></nav>

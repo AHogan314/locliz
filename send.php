@@ -12,6 +12,6 @@
 	$sql = "insert into posts(msg, name) values('$msg', '$name')";
 	$result = $conn->query($sql);
 
-	header("Location:home.php");
+	header("Location:index.php");
 
 ?>

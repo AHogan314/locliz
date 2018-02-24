@@ -1,16 +1,19 @@
-.jumbotron {
-	text-align: center;
-	padding-top: 100px;
-	background: url(../images/jumbotron2a.jpg);
-	background-size: cover;
-	background-position: center; 
-	color: #25b0e6;
+#main {
+	margin-top: 100px; 
+	margin-bottom: 100px;
+}
 
+.thread-list {
+	text-align: center;
 }
 
 body {
-	background-color: #101010;
-
+	background-color: #262626;
+	color: white;
+}
+.thread-row {
+	background-color: white;
+	color: black;
 }
 
 .row {
@@ -52,14 +55,15 @@ border-color: transparent;
     float: none;
 }
 
-
-
-
-
 .navbar-static-bottom {
 	margin-bottom:0px;
 	
 }
+
+.navbar-inverse {
+	background-color: black;
+}
+
 
 
 
