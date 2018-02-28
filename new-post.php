@@ -15,7 +15,7 @@
 		<div class="container">
 
 			<!-- top navigation bar -->
-			<?php include('./nav-top.htm'); ?>	
+			<?php include('./nav-top.php'); ?>	
 
 
 				<!-- send messages -->
@@ -28,7 +28,7 @@
 
 
 			<!-- bottom navigation bar -->
-			<?php include('./nav-bottom.htm'); ?>		
+			<?php include('./nav-bottom.php'); ?>		
 
 		</div>
 
