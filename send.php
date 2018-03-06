@@ -6,12 +6,13 @@
 	// include database credentials/connection
 	include('./dbh.php');
 
-	$msg = $_POST['msg'];
-	$name = $_SESSION['name'];
+	$title = mysqli_real_escape_string($conn, $_POST['title']);
+	$msg = mysqli_real_escape_string($conn, $_POST['msg']);
+	$name = mysqli_real_escape_string($conn, $_SESSION['name']);
 
-	$sql = "insert into posts(msg, name) values('$msg', '$name')";
+	$sql = "insert into posts(title, msg, name) values('$title', '$msg', '$name')";
 	$result = $conn->query($sql);
 
-	header("Location:home.php");
+	header("Location:index.php");
 
 ?>

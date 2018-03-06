@@ -1,4 +1,5 @@
 <!-- thread controls -->
+<nav class="navbar center">
 <div class="navbar-inner">
     <ul class="nav navbar-nav">
     	<!-- thumbs up -->
@@ -13,10 +14,11 @@
     	<li class="dropdown">
 			<a href="#" class ="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-option-horizontal"></span></a>
 			<ul class="dropdown-menu">
-				<li><a href="#"><span class="glyphicon glyphicon-envelope"> Message</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-ban-circle"> Block</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"> Report</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-ban-circle"></span> Block</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> Report</a></li>
 			</ul>
 		</li>
     </ul>
-</div><br><br>'
+</div>
+</span></nav>

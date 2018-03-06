@@ -1,23 +1,48 @@
-.jumbotron {
-	text-align: center;
-	padding-top: 100px;
-	background: url(../images/jumbotron2a.jpg);
-	background-size: cover;
-	background-position: center; 
-	color: #25b0e6;
+.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
 
+#main {
+	margin-top: 100px; 
+	margin-bottom: 100px;
+}
+
+.thread-list {
+	text-align: center;
 }
 
 body {
-	background-color: #101010;
-
+	background-color: #262626;
+	color: white;
+}
+.thread-row {
+	background-color: white;
+	color: black;
 }
 
-.row {
-	padding-bottom: 30px;
-	text-align: center;
-	
+.thread-card {
+	background-color: white;
+	color: black;
+
+	text-align: left;
+
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+
+
 }
+.thread-list{
+	margin-top: 50px;
+}
+
+.i-am-centered { 
+	margin: auto; 
+	}
+
 .thumbnail {
 	border:none;
 	background-color:transparent;
@@ -52,14 +77,15 @@ border-color: transparent;
     float: none;
 }
 
-
-
-
-
 .navbar-static-bottom {
 	margin-bottom:0px;
 	
 }
+
+.navbar-inverse {
+	background-color: black;
+}
+
 
 
 

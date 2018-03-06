@@ -1,6 +1,6 @@
 <!-- threads -->
-<div id="main" style="margin-top: 100px; margin-bottom: 100px">
-	<div class="output">
+<div id="main" >
+	<div class="thread-list">
 		<?php
 			// select all rows FROM "posts" table and sort newest to oldest
 			// this should be changed to fetch the most recent 10-20 posts
@@ -16,31 +16,55 @@
 
 				while($row = $result->fetch_assoc()){
 					
-					// echo advertisement div every 10 messages
-					if($messageCount % 10 == 0 && $messageCount != 0){
-						// echo advertisement div
-						echo "[ADVERTISEMENT PLACEHOLDER]<br><br>";
-					}
-					
-						// echo post
-						// add most recent reply as second row
+					// advertisement card after every ten threads
+					if($messageCount % 10 == 0 && $messageCount != 0){ ?>
+						<!-- advertisement div -->
+						<div class='row'>
+							<div class='card thread-card col-md-6 col-sm-6 '>
+								<h3 class='card-title'>(advertisement)</h3>
+								
+								<!-- to be replaced -->
+								<?php include('./thread-navbar.php');?>	
 						
+							</div>
+						</div>
+					<?php } ?>
+					
+					<!-- thread card -->
+					<div class='row'>
+						<!-- thread is clickable -->
+						<div class='card thread-card col-md-6 col-sm-6 col-xs-11 ' onclick='location.href="./viewthread.php?id=<?php echo $row['id'];?>"'>
+						<!-- thread title -->
+						<?php if(empty($row['title'])){ ?>
+							<h3 class='card-title'>(no title)</h3>
+						<?php } 
+						else{ ?>
+							<h3 class='card-title'><?php echo $row['title']; ?></h3>
+						<?php } ?>
+						<!-- thread text -->
+						<p class='card-text'><?php echo $row['msg']; ?></p>
+						<!-- timestamp -->
+						<span class='glyphicon glyphicon-time'></span> <?php echo $row['date']; ?>
+						<!-- location -->
+						<?php if(empty($row['location'])){ ?>
+							<span style='float: right;'><span class='glyphicon glyphicon-map-marker'></span> Unknown</span>			
+						<?php }
+						else{?>
+							<span style='float: right;'><span class='glyphicon glyphicon-map-marker'></span> <?php $row['date'];?></span>
+						<?php }
 
-						echo "" . $row["name"] . " " . ":: " . $row["msg"] . " -- " . $row["date"] . "<br><br>";
+						include('./thread-navbar.php');	?>
 
-						include('./thread-navbar.php');	
+						</div>
+					</div>
 
-				
-					// post divider
-					// will not be necessary after posts are inserted into divs
-					echo "<br>";
-					$messageCount++;
+					<?php $messageCount++; 
 				}
 			}
-			else {
-				// fallback if db empty
-				echo "0 results";
-			}
+			else {?>
+				 <!-- fallback if db empty -->
+				<p>0 results</p>
+			<?php }
 			$conn->close();
 		?>
 	</div>
