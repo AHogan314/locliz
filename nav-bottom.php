@@ -14,15 +14,14 @@
             <li><a href="<?php echo ($loggedIn ? 'notifications.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-bell"></a></li>
             <!-- refresh -->
             <li><a href="#" onclick="pageRefresh()"><span class="glyphicon glyphicon-repeat"></a></li>
-
             <!-- more -->
         	<li class="dropdown">
 				<a href="#" class ="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-option-horizontal"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="search.php"><span class="glyphicon glyphicon-search"> Search</a></li>
-					<li><a href="<?php echo ($loggedIn ? 'settings.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-cog"> Settings</a></li>
-					<li><a href="<?php echo ($loggedIn ? 'profile.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-user"> Profile</a></li>
-					<li><a href="<?php echo ($loggedIn ? 'logout.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-log-out"> <?php echo ($loggedIn ? 'Logout' : 'Login');?></a></li>
+					<li><a href="search.php"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+					<li><a href="<?php echo ($loggedIn ? 'settings.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+					<li><a href="<?php echo ($loggedIn ? 'profile.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+					<li><a href="<?php echo ($loggedIn ? 'logout.php' : 'login-page.php');?>"><span class="glyphicon glyphicon-log-out"></span> <?php echo ($loggedIn ? 'Logout' : 'Login');?></a></li>
 				</ul>
 			</li>
 

@@ -15,12 +15,13 @@
 		<div class="container">
 
 			<!-- top navigation bar -->
-			<?php include('./nav-top.htm'); ?>	
+			<?php include('./nav-top.php'); ?>	
 
 
 				<!-- send messages -->
 				<form style="margin-top: 100px; margin-bottom: 100px" method="post" action="send.php">
-					<textarea name="msg" placeholder="Type to send message..." class="form-control"></textarea><br>
+					<textarea name="title" placeholder="Title" class="form-control"></textarea><br>
+					<textarea name="msg" placeholder="Text" class="form-control"></textarea><br>
 					<input type="submit" value="Send">
 				</form>
 				<br>
@@ -28,7 +29,7 @@
 
 
 			<!-- bottom navigation bar -->
-			<?php include('./nav-bottom.htm'); ?>		
+			<?php include('./nav-bottom.php'); ?>		
 
 		</div>
 
