@@ -91,74 +91,49 @@ function time_elapsed_string($datetime, $full = false) {
 								</div>
 							</div>
 
-
-<!-- thread controls -->
-<nav class="navbar center">
-<div class="navbar-inner">
-    <ul class="nav navbar-nav">
-
-    	<li>
-			<!-- timestamp -->
-			<p class="navbar-text">
-				<span class='glyphicon glyphicon-time'></span> <?php echo $fixedTime; ?>
-			</p>
-		</li>
-        <!-- reply: opens thread in new page -->
-        <li><a href="./viewthread.php?id=<?php echo $row['id']?>"><span class="glyphicon glyphicon-comment"></a></li>
-        <!-- favorite -->
-        <li><a href="#"><span class="glyphicon glyphicon-heart-empty"></a></li>
-        <!-- more -->
-    	<li class="dropdown">
-			<a href="#" class ="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-option-horizontal"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-ban-circle"></span> Block</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> Report</a></li>
-			</ul>
-		</li>
-		<li>
-			<p class="navbar-text">
-				<!-- location -->
-				<?php if(empty($row['location'])){ ?>
-					<span style='float: right;'><span class='glyphicon glyphicon-map-marker'></span> Unknown</span>			
-				<?php }
-				else{?>
-					<span style='float: right;'><span class='glyphicon glyphicon-map-marker'></span> <?php $row['date'];?></span>
-				<?php }
-				// include('./thread-navbar.php');	?>
-			</p>
-		</li>
-
-
-
-
-    </ul>
-</div>
-</span></nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-						
-
-						</div>
+							<!-- thread controls -->
+							<nav class="navbar center">
+								<div class="navbar-inner">
+								    <ul class="nav navbar-nav">
+								    	<li>
+											<!-- timestamp -->
+											<p class="navbar-text">
+												<span class='glyphicon glyphicon-time'></span> <?php echo $fixedTime; ?>
+											</p>
+										</li>
+								        <!-- reply: opens thread in new page -->
+								        <li><a href="./viewthread.php?id=<?php echo $row['id']?>"><span class="glyphicon glyphicon-comment"></a></li>
+								        <!-- favorite -->
+								        <li><a href="#"><span class="glyphicon glyphicon-heart-empty"></a></li>
+								        <!-- more -->
+								    	<li class="dropdown">
+											<a href="#" class ="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-option-horizontal"></span></a>
+											<ul class="dropdown-menu">
+												<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
+												<li><a href="#"><span class="glyphicon glyphicon-ban-circle"></span> Block</a></li>
+												<li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> Report</a></li>
+											</ul>
+										</li>
+										<li>
+											<p class="navbar-text">
+												<!-- location -->
+												<?php if(empty($row['location'])){ ?>
+													<span style='float: right;'><span class='glyphicon glyphicon-map-marker'></span> Unknown</span>			
+												<?php }
+												else{?>
+													<span style='float: right;'><span class='glyphicon glyphicon-map-marker'></span> <?php $row['date'];?></span>
+												<?php }
+												// include('./thread-navbar.php');	?>
+											</p>
+										</li>
+								    </ul>
+								</div>
+							</span>
+						</nav>
 					</div>
+				</div>
 
-					<?php $messageCount++; 
+				<?php $messageCount++; 
 				}
 			}
 			else {?>
