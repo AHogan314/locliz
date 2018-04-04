@@ -59,48 +59,77 @@
 			?>
 
 			<!-- send replies -->
-			<form style="margin-top: 100px; margin-bottom: 100px" method="post" action="reply.php">
+			<form style="margin-top: 100px; margin-bottom: 100px" method="post" action="reply.php" id="replyForm">
 				<textarea name="msg" placeholder="<?php echo $threadId ;?>" class="form-control"></textarea><br>
 				<input type="hidden" name="thread_id" value="<?php echo $threadId ;?>">
-				<input type="submit" value="Send">
+				<input type="submit" value="Send" id="submitButton">
 			</form>
 			<br>
 
-<!-- geolocation -->
-<p>Click the button to get your coordinates.</p>
+			<!-- geolocation -->
+			<p>Click the button to get your coordinates.</p>
 
-<button onclick="getLocation()">Try It</button>
+			<button onclick="getLocation()">Try It</button>
 
-<p id="demo"></p>
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+			<p id="demo"></p>
 
 
 
-
-
-			<!-- bottom navigation bar -->
-			<?php include('./nav-bottom.php'); ?>		
+		<!-- bottom navigation bar -->
+		<?php include('./nav-bottom.php'); ?>		
 		</div>
 		
-		<script src="http:// ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 
 	</body>
 </html>
 
+<script>
+	var x = document.getElementById("demo");
+
+	function getLocation() {
+	    if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(showPosition);
+	    } else { 
+	        x.innerHTML = "Geolocation is not supported by this browser.";
+	    }
+	}
+
+	function showPosition(position) {
+	    x.innerHTML = "Latitude: " + position.coords.latitude + 
+	    "<br>Longitude: " + position.coords.longitude;
+	}
+</script>
+
+<script>
+$(document).ready(function () {
+	// the following prevents default form submit action.  
+
+
+
+
+// 	    $.post("reply.php", {thread_id: $('input[name="thread_id"]').val(), msg: $('textarea[name="msg"]').val()});
+// 	});
+// });
+
+
+	// gets user geolocation on submit button click. 
+	$( "#replyForm" ).submit(function( event ) {
+	    event.preventDefault();
+		if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(showPosition);
+	    } 
+	    else { 
+	       alert("Geolocation is not supported by this browser.");
+	    }
+	});
+	function showPosition(position) {
+		latitude = position.coords.latitude;
+		longitude = position.coords.longitude;
+		$.post("reply.php", {thread_id: $('input[name="thread_id"]').val(), msg: $('textarea[name="msg"]').val(), latitude: latitude, longitude: longitude});
+		// redirect to thread
+		window.location.href = "viewthread.php?id=" + $('input[name="thread_id"]').val();
+	}
+});
+</script>
